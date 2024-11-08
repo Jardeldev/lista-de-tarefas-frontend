@@ -7,7 +7,7 @@
 
       <v-dialog v-model="showModal" max-width="500px">
         <v-card>
-          <v-card-title class="text-h5">Título do Modal</v-card-title>
+          <v-card-title class="text-h5">Adicionando Tarefa</v-card-title>
           <v-card-text>
       <v-form ref="form">
         <v-text-field
