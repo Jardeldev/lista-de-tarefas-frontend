@@ -42,7 +42,7 @@ export default {
   methods: {
     async carregarTarefas() {
       try {
-        const response = await axios.get('http://localhost:3000/api/tarefas');
+        const response = await axios.get('https://lista-de-tarefas-backend-wtjm.onrender.com/api/tarefas');
         this.tarefas = response.data.map((tarefa) => ({
           ...tarefa,
           dataLimite: new Date(tarefa.dataLimite).toLocaleDateString('pt-BR'),
@@ -72,7 +72,7 @@ async atualizarOrdemTarefas() {
   console.log("Dados a serem enviados:", dados);
 
   try {
-    const resposta = await axios.put("http://localhost:3000/api/tarefas/ordenar", dados);
+    const resposta = await axios.put("https://lista-de-tarefas-backend-wtjm.onrender.com/api/tarefas/ordenar", dados);
     console.log("Resposta do servidor:", resposta.data);
   } catch (erro) {
     console.error("Erro na requisição PUT:", erro);

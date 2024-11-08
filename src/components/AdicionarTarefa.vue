@@ -60,7 +60,7 @@ export default {
   },
     methods: {
       confirmarAcao() {
-        axios.post('http://localhost:3000/api/tarefas', {
+        axios.post('https://lista-de-tarefas-backend-wtjm.onrender.com/api/tarefas', {
           nome: this.name,
           custo: this.custo,
           dataLimite: this.dataLimite,
@@ -77,7 +77,7 @@ export default {
 
   
         if (nome && custo && dataLimite) {
-          axios.post('http://localhost:3000/api/tarefas', {
+          axios.post('https://lista-de-tarefas-backend-wtjm.onrender.com/api/tarefas', {
             nome,
             custo,
             dataLimite,

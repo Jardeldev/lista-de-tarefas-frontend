@@ -20,7 +20,7 @@ export default {
         const confirmacao = confirm('Deseja realmente excluir a tarefa?');
         if (confirmacao) {
           try {
-            await axios.delete(`http://localhost:3000/api/tarefas/${id}`);
+            await axios.delete(`https://lista-de-tarefas-backend-wtjm.onrender.com/api/tarefas/${id}`);
             this.$emit('tarefaDeletada'); // Emite um evento para atualizar a lista
 
             

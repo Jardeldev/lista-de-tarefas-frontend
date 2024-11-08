@@ -67,7 +67,7 @@ export default {
   async created() {
     const id = this.tarefaId; // Obter o ID da tarefa da URL
     try {
-      const response = await axios.get(`http://localhost:3000/api/tarefas/${id}`);
+      const response = await axios.get(`https://lista-de-tarefas-backend-wtjm.onrender.com/api/tarefas/${id}`);
       this.tarefa = response.data;
     } catch (error) {
       console.error('Erro ao carregar tarefa para edição:', error);
@@ -77,7 +77,7 @@ export default {
     async salvarTarefa() {
       const id = this.tarefaId;
       try {
-        await axios.put(`http://localhost:3000/api/tarefas/${id}`, this.tarefa);
+        await axios.put(`https://lista-de-tarefas-backend-wtjm.onrender.com/api/tarefas/${id}`, this.tarefa);
         this.$router.push('/'); // Redireciona de volta para a lista de tarefas
       } 
       catch (error) {
