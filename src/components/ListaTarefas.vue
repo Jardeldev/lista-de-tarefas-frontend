@@ -43,10 +43,15 @@ export default {
     async carregarTarefas() {
       try {
         const response = await axios.get('https://lista-de-tarefas-backend-wtjm.onrender.com/api/tarefas');
-        this.tarefas = response.data.map((tarefa) => ({
-          ...tarefa,
-          dataLimite: new Date(tarefa.dataLimite).toLocaleDateString('pt-BR'),
-        }));
+        this.tarefas = response.data.map((tarefa) => {
+      const dataLimite = new Date(tarefa.dataLimite);
+      // Ajuste para o fuso horário local para evitar diferença de dias
+      const adjustedDate = new Date(dataLimite.getTime() + dataLimite.getTimezoneOffset() * 60000);
+      return {
+        ...tarefa,
+        dataLimite: adjustedDate.toLocaleDateString('pt-BR'),
+      };
+    });
       } catch (error) {
         console.error('Erro ao carregar tarefas:', error);
       }
